@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="w375"></div>
+  <div class="padding">
+    <div class="h2 margin-top-4x bolder">欢迎登录{{instinfo.name}}</div>
+    <div class="flex-row flex-center margin-top-1x ">
+      <div class=""><ion-img [src]="uploadpath+'resource/'+res.coupon" class="icon-1x" ></ion-img></div>
+      <div class="f-g h6">新用户登录限时领取新人券</div>
+    </div>
+    <div class="margin-top-4x padding-bottom-1x bd-bottom">
+      <ion-input placeholder="请输入手机号" clearInput [(ngModel)]="mobile" type="tel"  maxlength="11" ></ion-input>
+    </div>
+    <div class="margin-top ">
+      <ion-button color="primary" (click)="getVerifyCode()" expand="block" [disabled]="mobile.length!=11||mobile[0]!='1'">获取验证码</ion-button>
+    </div>
+    <div class="margin-top text-right">
+      <span (click)="oneclickLogin()">一键登录</span>
+    </div>
+  </div>
+</ion-content>

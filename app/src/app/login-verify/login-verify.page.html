@@ -1,0 +1,23 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="padding">
+    <div class="h2 margin-top-4x bolder">输入验证码</div>
+    <div class="flex-row flex-center margin-top-1x ">
+      <div class="f-g h6">验证码已经发送到</div>
+      <div class="f-p h6 ">{{mobile}}</div>
+    </div>
+    <div class="margin-top-4x padding-bottom-1x bd-bottom">
+      <ion-input autofocus placeholder="请输入验证码"  clearInput [(ngModel)]="verifycode" type="tel"  maxlength="6" ></ion-input>
+    </div>
+    <div class="margin-top ">
+      <ion-button color="primary" (click)="login()" expand="block" [disabled]="verifycode.length!=6">立即登录</ion-button>
+    </div>
+  </div>
+</ion-content>
